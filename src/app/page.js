@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 export default function Home() {
     //TODO: A call to the google cloud run function for number of vistor counter
     
-  return (
+return (
     <>
       <header>
           <p>You are the: <span id="visitor-count">0</span> person to visit this site. Thank you!!</p>
@@ -135,7 +135,7 @@ export default function Home() {
                             <li>
                                 <b>Responsibilities:</b>
                                 <ul>
-                                    <li>Migrating legacy system's frontend from Razor Pages to MudBlazor UI framework.</li>
+                                    <li>Migrating legacy system&#39;s frontend from Razor Pages to MudBlazor UI framework.</li>
                                     <li>Implement CRUD (Create, Read, Update, Delete) operations for new system requirement using ASP.NET.</li>
                                     <li>Implementing software new requirements while following SOLID principles.</li>
                                     <li>Writing C# code to automate testing Fieldbus digital input/output for product quality assurance.</li>
