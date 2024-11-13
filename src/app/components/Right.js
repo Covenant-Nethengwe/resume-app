@@ -1,37 +1,5 @@
-"use client"
-
-import Image from "next/image";
-import styles from "./page.module.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Left } from "@/app/components/Left"
-export default function Home() {
-    // 
-    const baseUrl = "https://apigateway-eu-3u1gniyy.ew.gateway.dev"
-
-    const [visitorCount, setVistCount] = useState(0);
-
-    useEffect(() => {
-        axios.get(`${baseUrl}/v1/visitor-count`).then((res) => {
-            setVistCount(res.data)
-            console.log(res.data);
-            
-        }).catch((error) => {
-            console.log(error);
-        });
-
-    }, [])
-
-    return (
-        <>
-        <header>
-            <p>Hello, you are the {visitorCount.count} person to visit my resume, powered by Google Cloud, Thank you!!</p>
-        </header>
-        
-        <main>
-            <section id="main">
-                <Left/>
-                <section id="right">
+export const Right = () => {
+    <section id="right">
                     <aside>
                         <h2>Bio</h2>
                         <p>
@@ -205,11 +173,4 @@ export default function Home() {
                         </details>
                     </aside>
                 </section>
-            </section>
-        </main>
-        <footer>
-            
-        </footer>
-        </>
-    );
 }
