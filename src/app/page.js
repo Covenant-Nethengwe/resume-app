@@ -9,11 +9,11 @@ export default function Home() {
     // 
     const baseUrl = "https://apigateway-eu-3u1gniyy.ew.gateway.dev"
 
-    const [visitorCount, setVistCount] = useState(0);
+    const [visitorCount, setVisitCount] = useState(0);
 
     useEffect(() => {
         axios.get(`${baseUrl}/v1/visitor-count`).then((res) => {
-            setVistCount(res.data)
+            setVisitCount(res.data)
             console.log(res.data);
             
         }).catch((error) => {
