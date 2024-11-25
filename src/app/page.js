@@ -15,10 +15,11 @@ export default function Home() {
     useEffect(() => {
         axios.get(`${baseUrl}/v1/visitor-count?key=${apiKey}`).then((res) => {
             setVisitCount(res.data)
-            console.log(res.data);
+            console.info(res.data);
+            console.info('API Key successfully loaded:: ', apiKey);
             
         }).catch((error) => {
-            console.log(error);
+            console.info(error);
         });
 
     }, [apiKey])
