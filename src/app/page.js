@@ -7,12 +7,13 @@ import { useEffect, useState } from "react";
 import { Left } from "@/app/components/Left"
 export default function Home() {
     // 
-    const baseUrl = "https://apigateway-eu-3u1gniyy.ew.gateway.dev"
+    const baseUrl = "https://resume-api-gateway-us-3u1gniyy.uc.gateway.dev"
+    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
 
     const [visitorCount, setVisitCount] = useState(0);
 
     useEffect(() => {
-        axios.get(`${baseUrl}/v1/visitor-count`).then((res) => {
+        axios.get(`${baseUrl}/v1/visitor-count?key=${apiKey}`).then((res) => {
             setVisitCount(res.data)
             console.log(res.data);
             
@@ -20,10 +21,10 @@ export default function Home() {
             console.log(error);
         });
 
-    }, [])
+    }, [apiKey])
 
     return (
-        <>
+        <>                                      
         <header>
             <p>Hello, you are the {visitorCount.count} person to visit my resume, powered by Google Cloud, Thank you!!</p>
         </header>
